@@ -1,0 +1,86 @@
+# Local project data and generated artifacts
+/checkpoints/*
+/data/
+/models/
+/outputs/
+/project/
+/results/
+/third_party/
+
+# Model weights and training state
+*.bin
+*.ckpt
+*.onnx
+*.pkl
+*.pt
+*.pth
+*.safetensors
+training_states/
+
+# Keep only the fixed prompt embedding in the GitHub repository.
+!/checkpoints/FastVR/
+/checkpoints/FastVR/*
+!/checkpoints/FastVR/empty_prompt.pt
+
+# Training and profiling logs
+*.log
+events.out.tfevents.*
+/runs/
+/tensorboard/
+/wandb/
+
+# Python bytecode and tool caches
+__pycache__/
+*.py[cod]
+*$py.class
+.cache/
+.hypothesis/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.tox/
+.nox/
+.ipynb_checkpoints/
+
+# Coverage reports
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Packaging and compiled artifacts
+*.egg
+*.egg-info/
+*.so
+.eggs/
+build/
+dist/
+wheels/
+
+# Virtual environments and local environment variables
+.env
+.env.*
+!.env.example
+.venv/
+env/
+venv/
+
+# Editors, OS metadata, and local coding assistants
+.DS_Store
+Thumbs.db
+*.swp
+*~
+/.agents/
+/.aone_copilot/
+/.claude/
+/.codex/
+/.idea/
+/.opencode/
+/.qoder/
+/.vscode/
+/AGENTS.md
+
+# Temporary files
+*.bak
+*.temp
+*.tmp

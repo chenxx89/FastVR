@@ -1,0 +1,7 @@
+diffsynth==2.1.0
+einops
+filelock
+huggingface_hub
+requests
+safetensors
+

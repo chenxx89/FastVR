@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastvr"
+version = "0.1.0"
+description = "Fast and high-quality generative video enhancement"
+authors = [{name = "FastVR Contributors"}]
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10.0"
+dependencies = [
+    "diffsynth==2.1.0",
+    "torch>=2.0.0",
+    "numpy",
+    "Pillow",
+    "safetensors",
+    "einops",
+    "tqdm",
+    "PyYAML",
+    "imageio-ffmpeg",
+    "huggingface_hub",
+    "requests",
+    "filelock",
+    "imageio",
+    "torchvision",
+    "accelerate",
+    "omegaconf",
+    "opencv-python-headless>=4.9",
+    "decord",
+    "deepspeed",
+    "tensorboard",
+    "scipy",
+    "pyiqa",
+    "transformers>=4.45",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+where = ["./"]
+include = ["fastvr", "fastvr.*"]
+
+[project.scripts]
+fastvr-infer = "fastvr.infer:main"
+fastvr-train = "fastvr.train:main"
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+]
+[tool.setuptools]
+include-package-data = true

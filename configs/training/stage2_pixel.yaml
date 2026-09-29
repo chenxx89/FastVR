@@ -1,0 +1,42 @@
+version: 1
+stage: stage2_pixel
+
+dataset:
+  dataset_jsonl: ${env:FASTVR_DATASET_JSONL}
+  video_key: Filepath
+  dataset_repeat: 1
+  height: 1024
+  width: 1024
+  num_frames: 17
+  interval_list: [1, 1, 1, 1, 1, 1, 1, 2, 2, 3]
+  num_workers: 4
+  prefetch_factor: 2
+  pin_memory: false
+
+training:
+  model_base: ${env:FASTVR_MODEL_BASE}
+  dit_path: ${env:FASTVR_STAGE1_CHECKPOINT}
+  vae_path: ${training.model_base}/Wan2.2_VAE.pth
+  degradation:
+    config: ../data/realvsr.yaml
+  learning_rate: 1.0e-5
+  weight_decay: 1.0e-3
+  num_epochs: 2
+  gradient_accumulation_steps: 1
+  save_steps: 100
+  max_grad_norm: 1.0
+  lr_scheduler: cosine
+  lr_warmup_steps: 100
+  vsr_target_timestep: 399.0
+  window_causal_attention:
+    sizes: [3, 3, 2]
+  pixel_l1_weight: 1.0
+  dists_weight: 1.0
+  pixel_loss_latent_window_size: 5
+  pixel_loss_random_window: false
+  vgg16_weights_path:
+  dists_weights_path:
+  tensorboard: true
+  distributed_timeout_seconds: 7200
+  resume_from_checkpoint:
+  output_path: ${env:FASTVR_OUTPUT,outputs/stage2}

@@ -1,0 +1,40 @@
+version: 1
+stage: stage1_causal
+
+dataset:
+  dataset_jsonl: ${env:FASTVR_DATASET_JSONL}
+  video_key: Filepath
+  dataset_repeat: 1
+  height: 1024
+  width: 1024
+  num_frames: 45
+  interval_list: [1, 1, 1, 1, 1, 1, 1, 2, 2, 3]
+  num_workers: 4
+  prefetch_factor: 2
+  pin_memory: false
+
+training:
+  model_base: ${env:FASTVR_MODEL_BASE}
+  dit_path:
+    - ${training.model_base}/diffusion_pytorch_model-00001-of-00003.safetensors
+    - ${training.model_base}/diffusion_pytorch_model-00002-of-00003.safetensors
+    - ${training.model_base}/diffusion_pytorch_model-00003-of-00003.safetensors
+  vae_path: ${training.model_base}/Wan2.2_VAE.pth
+  degradation:
+    config: ../data/realvsr.yaml
+  learning_rate: 2.0e-5
+  num_epochs: 2
+  gradient_accumulation_steps: 1
+  save_steps: 1000
+  max_grad_norm: 1.0
+  lr_scheduler: cosine
+  lr_warmup_steps: 100
+  vsr_target_timestep: 399.0
+  window_causal_attention:
+    sizes: [3, 3, 2]
+    first_chunk_loss_weight: 2.0
+  consistency_weight: 1.0
+  tensorboard: true
+  distributed_timeout_seconds: 7200
+  resume_from_checkpoint:
+  output_path: ${env:FASTVR_OUTPUT,outputs/stage1}
