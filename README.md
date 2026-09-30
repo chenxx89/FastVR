@@ -4,16 +4,16 @@
 
 # FastVR: Efficient Streaming Video Restoration<br>with One-Step Diffusion
 
-**[Xiaoxu Chen](https://scholar.google.com/citations?user=-jJkyWsAAAAJ&hl=zh-CN)<sup>1,∗</sup>, Qin Yang<sup>1,2,∗</sup>, [Haoran Bai](https://csbhr.github.io/)<sup>1</sup>, [Sibin Deng](https://scholar.google.com/citations?user=brmDxnsAAAAJ&hl=zh-CN)<sup>1</sup>, [Ying Chen](https://scholar.google.com/citations?user=NpTmcKEAAAAJ&hl=en)<sup>1,†</sup>**
+**[Xiaoxu Chen](https://scholar.google.com/citations?user=-jJkyWsAAAAJ&hl=zh-CN)<sup>1,∗</sup>, Qin Yang<sup>1,2,∗</sup>, [Haoran Bai](https://csbhr.github.io/)<sup>1</sup>, Sibin Deng<sup>1</sup>, [Ying Chen](https://scholar.google.com/citations?user=NpTmcKEAAAAJ&hl=en)<sup>1,†</sup>**
 
 <sup>1</sup>Alibaba Group &nbsp;&nbsp; <sup>2</sup>Xidian University<br>
 <sup>∗</sup>Equal contribution &nbsp;&nbsp; <sup>†</sup>Corresponding author
 
+[![Paper](https://img.shields.io/badge/arXiv-2609.36757-b31b1b)](https://arxiv.org/abs/2609.36757)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://chenxx89.github.io/projects/fastvr/)
 [![Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow)](https://huggingface.co/chenxx89/FastVR)
 [![ComfyUI](https://img.shields.io/badge/ComfyUI-Nodes-blueviolet)](ComfyUI/README.md)
 [![License](https://img.shields.io/badge/License-Apache--2.0-green.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-%3E%3D3.10-blue.svg)](pyproject.toml)
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -31,11 +31,21 @@
 
 ## 🔥 News
 
-- **2026-09-29:** The FastVR technical report and source code are released.
+- **2026-09-29:** The [FastVR paper](https://arxiv.org/abs/2609.36757) is released.
+- **2026-09-29:** Training and inference code are released.
+
+## 🧩 Method Overview
 
 <div align="center">
   <img src="assets/overview.png" width="100%" alt="Overview of FastVR inference and two-stage training">
 </div>
+
+## 🔗 More from Our Team
+
+| Project | Highlight | Paper | Repository |
+| :---: | :---: | :---: | :---: |
+| **SATB-VR** | Flexible trade-off between restoration quality and inference speed. | [arXiv](https://arxiv.org/abs/2606.28677) | [GitHub](https://github.com/chenxx89/SATB-VR) |
+| **Vivid-VR** (ICLR 2026) | High-quality video restoration with photorealistic detail. | [arXiv](https://arxiv.org/abs/2508.14483) | [GitHub](https://github.com/csbhr/Vivid-VR) |
 
 ## 🎨 ComfyUI
 
@@ -208,15 +218,17 @@ Common inference options are listed below.
 
 ## 📝 Citation
 
-If FastVR is useful for your research, please cite the technical report:
+If FastVR is useful for your research, please cite the [paper](https://arxiv.org/abs/2609.36757):
 
 ```bibtex
-@misc{chen2026fastvr,
-  title        = {FastVR: Efficient Streaming Video Restoration with One-Step Diffusion},
-  author       = {Chen, Xiaoxu and Yang, Qin and Bai, Haoran and Deng, Sibin and Chen, Ying},
-  year         = {2026},
-  note         = {Technical report},
-  url          = {https://chenxx89.github.io/projects/fastvr/}
+@misc{chen2026fastvrefficientstreamingvideo,
+  title         = {FastVR: Efficient Streaming Video Restoration with One-Step Diffusion},
+  author        = {Xiaoxu Chen and Qin Yang and Haoran Bai and Sibin Deng and Ying Chen},
+  year          = {2026},
+  eprint        = {2609.36757},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2609.36757}
 }
 ```
 
