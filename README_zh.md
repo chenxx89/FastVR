@@ -4,16 +4,16 @@
 
 # FastVR：基于单步扩散的高效流式视频修复
 
-**[Xiaoxu Chen](https://scholar.google.com/citations?user=-jJkyWsAAAAJ&hl=zh-CN)<sup>1,∗</sup>, Qin Yang<sup>1,2,∗</sup>, [Haoran Bai](https://csbhr.github.io/)<sup>1</sup>, [Sibin Deng](https://scholar.google.com/citations?user=brmDxnsAAAAJ&hl=zh-CN)<sup>1</sup>, [Ying Chen](https://scholar.google.com/citations?user=NpTmcKEAAAAJ&hl=en)<sup>1,†</sup>**
+**[Xiaoxu Chen](https://scholar.google.com/citations?user=-jJkyWsAAAAJ&hl=zh-CN)<sup>1,∗</sup>, Qin Yang<sup>1,2,∗</sup>, [Haoran Bai](https://csbhr.github.io/)<sup>1</sup>, Sibin Deng<sup>1</sup>, [Ying Chen](https://scholar.google.com/citations?user=NpTmcKEAAAAJ&hl=en)<sup>1,†</sup>**
 
 <sup>1</sup>Alibaba Group &nbsp;&nbsp; <sup>2</sup>Xidian University<br>
 <sup>∗</sup>Equal contribution &nbsp;&nbsp; <sup>†</sup>Corresponding author
 
+[![Paper](https://img.shields.io/badge/arXiv-2609.36757-b31b1b)](https://arxiv.org/abs/2609.36757)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://chenxx89.github.io/projects/fastvr/)
 [![Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-yellow)](https://huggingface.co/chenxx89/FastVR)
 [![ComfyUI](https://img.shields.io/badge/ComfyUI-Nodes-blueviolet)](ComfyUI/README_zh.md)
 [![License](https://img.shields.io/badge/License-Apache--2.0-green.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-%3E%3D3.10-blue.svg)](pyproject.toml)
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -29,11 +29,21 @@
 
 ## 🔥 最新消息
 
-- **2026-09-29：** FastVR 技术报告和源代码正式发布。
+- **2026-09-29：** [FastVR 论文](https://arxiv.org/abs/2609.36757)正式发布。
+- **2026-09-29：** 训练与推理代码正式发布。
+
+## 🧩 方法概览
 
 <div align="center">
   <img src="assets/overview.png" width="100%" alt="FastVR 推理流程与两阶段训练框架总览">
 </div>
+
+## 🔗 团队其他工作
+
+| 项目 | 亮点 | 论文 | 代码仓库 |
+| :---: | :---: | :---: | :---: |
+| **SATB-VR** | 支持在修复画质与推理速度之间灵活权衡。 | [arXiv](https://arxiv.org/abs/2606.28677) | [GitHub](https://github.com/chenxx89/SATB-VR) |
+| **Vivid-VR**<br>（ICLR 2026） | 实现具有真实感细节的高质量视频修复。 | [arXiv](https://arxiv.org/abs/2508.14483) | [GitHub](https://github.com/csbhr/Vivid-VR) |
 
 ## 🎨 ComfyUI
 
@@ -198,15 +208,17 @@ python3 -m fastvr.infer \
 
 ## 📝 引用
 
-如果 FastVR 对您的研究有帮助，请引用技术报告：
+如果 FastVR 对您的研究有帮助，请引用[论文](https://arxiv.org/abs/2609.36757)：
 
 ```bibtex
-@misc{chen2026fastvr,
-  title        = {FastVR: Efficient Streaming Video Restoration with One-Step Diffusion},
-  author       = {Chen, Xiaoxu and Yang, Qin and Bai, Haoran and Deng, Sibin and Chen, Ying},
-  year         = {2026},
-  note         = {Technical report},
-  url          = {https://chenxx89.github.io/projects/fastvr/}
+@misc{chen2026fastvrefficientstreamingvideo,
+  title         = {FastVR: Efficient Streaming Video Restoration with One-Step Diffusion},
+  author        = {Xiaoxu Chen and Qin Yang and Haoran Bai and Sibin Deng and Ying Chen},
+  year          = {2026},
+  eprint        = {2609.36757},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2609.36757}
 }
 ```
 
